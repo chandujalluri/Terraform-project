@@ -1,20 +1,8 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
+provider "aws" {
+  region = "us-east-1"
 }
-
-provider "aws"{
-region = "us-east-1"
-access_key = "AKIA2KQG3KB2EBTOCPVZ"
-secret_key = "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"
-}
-
 resource "aws_instance" "one" {
-  ami             = "ami-02f3f602d23f1659d"
+  ami             = "ami-005f9685cb30f234b"
   instance_type   = "t2.micro"
   key_name        = "jen1"
   vpc_security_group_ids = [aws_security_group.three.id]
@@ -33,7 +21,7 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-02f3f602d23f1659d"
+  ami             = "ami-005f9685cb30f234b"
   instance_type   = "t2.micro"
   key_name        = "jen1"
   vpc_security_group_ids = [aws_security_group.three.id]
@@ -76,11 +64,11 @@ resource "aws_security_group" "three" {
 }
 
 resource "aws_s3_bucket" "four" {
-  bucket = "chanduterrf1"
+  bucket = "chandubuck"
 }
 
 resource "aws_iam_user" "five" {
-name = "chanterrf1" 
+name = "chanuser" 
 }
 
 resource "aws_ebs_volume" "six" {
