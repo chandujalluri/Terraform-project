@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "ap-south-1"
-access_key = "AKIARSPNELGYCJEVYJ4K"
-secret_key = "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"
+region = "us-east-1"
+access_key = "AKIA2KQG3KB2EBTOCPVZ"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-02f3f602d23f1659d"
   instance_type   = "t2.micro"
-  key_name        = "rmk8s"
+  key_name        = "jen1"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "us-east-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-02f3f602d23f1659d"
   instance_type   = "t2.micro"
-  key_name        = "rmk8s"
+  key_name        = "jen1"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1b"
+  availability_zone = "us-east-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -68,16 +68,16 @@ resource "aws_security_group" "three" {
 }
 
 resource "aws_s3_bucket" "four" {
-  bucket = "raham0077552bucketterra"
+  bucket = "chanduterrf1"
 }
 
 resource "aws_iam_user" "five" {
-name = "rahamuser11" 
+name = "chanterrf1" 
 }
 
 resource "aws_ebs_volume" "six" {
- availability_zone = "ap-south-1b"
-  size = 40
+ availability_zone = "us-east-1b"
+  size = 20
   tags = {
     Name = "ebs-001"
   }
