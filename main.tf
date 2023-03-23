@@ -4,7 +4,7 @@ provider "aws" {
   secret_key = "XfVh5BqM9ziNkPj0Mi/f04VYQeN4C7nvQ85Q3kI5"
 }
 
-resource "aws_instance" "exp1" {
+resource "aws_instance" "one" {
   ami             = "ami-05afd67c4a44cc983"
   instance_type   = "t2.micro"
   key_name        = "terraf1"
@@ -23,7 +23,7 @@ EOF
   }
 }
 
-resource "aws_instance" "exp2" {
+resource "aws_instance" "two" {
   ami             = "ami-05afd67c4a44cc983"
   instance_type   = "t2.micro"
   key_name        = "terraf1"
