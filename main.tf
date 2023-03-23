@@ -66,11 +66,11 @@ resource "aws_security_group" "three" {
 }
 
 resource "aws_s3_bucket" "four" {
-  bucket = "chandubuck"
+  bucket = "chandubucket2024"
 }
 
 resource "aws_iam_user" "five" {
-name = "chanuser" 
+name = "chanuser2024" 
 }
 
 resource "aws_ebs_volume" "six" {
