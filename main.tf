@@ -41,7 +41,6 @@ EOF
     Name = "server2"
   }
 }
-
 resource "aws_security_group" "three" {
   name = "elb-sg"
   ingress {
