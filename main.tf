@@ -1,15 +1,15 @@
 provider "aws" {
-  region = "us-east-1"
-  access_key = "AKIA2KQG3KB2A4PELZOY"
-  secret_key = "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"
+  region = "ap-south-1"
+  access_key = "AKIA2KQG3KB2JLL7GI3Y"
+  secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-005f9685cb30f234b"
+  ami             = "ami-05afd67c4a44cc983"
   instance_type   = "t2.micro"
-  key_name        = "jen1"
+  key_name        = "terraf1"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -24,11 +24,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-005f9685cb30f234b"
+  ami             = "ami-05afd67c4a44cc983"
   instance_type   = "t2.micro"
-  key_name        = "jen1"
+  key_name        = "terraf1"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "us-east-1b"
+  availability_zone = "ap-south-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -75,7 +75,7 @@ name = "chanuser"
 }
 
 resource "aws_ebs_volume" "six" {
- availability_zone = "us-east-1b"
+ availability_zone = "ap-south-1b"
   size = 20
   tags = {
     Name = "ebs-001"
