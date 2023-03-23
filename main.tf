@@ -75,7 +75,7 @@ name = "chanuser2024"
 
 resource "aws_ebs_volume" "six" {
  availability_zone = "ap-south-1b"
-  size = 20
+  size = 40
   tags = {
     Name = "ebs-001"
   }
