@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-05afd67c4a44cc983"
+  ami             = "ami-03c4dbdfc36515b16"
   instance_type   = "t2.micro"
   key_name        = "terraf1"
   vpc_security_group_ids = [aws_security_group.three.id]
@@ -24,7 +24,7 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-05afd67c4a44cc983"
+  ami             = "ami-03c4dbdfc36515b16"
   instance_type   = "t2.micro"
   key_name        = "terraf1"
   vpc_security_group_ids = [aws_security_group.three.id]
