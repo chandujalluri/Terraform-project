@@ -4,7 +4,7 @@ provider "aws" {
   secret_key = "XfVh5BqM9ziNkPj0Mi/f04VYQeN4C7nvQ85Q3kI5"
 }
 
-resource "aws_instance" "one" {
+resource "aws_instance" "exp1" {
   ami             = "ami-05afd67c4a44cc983"
   instance_type   = "t2.micro"
   key_name        = "terraf1"
@@ -19,11 +19,11 @@ chkconfig httpd on
 echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "server-1"
+    Name = "server1"
   }
 }
 
-resource "aws_instance" "two" {
+resource "aws_instance" "exp2" {
   ami             = "ami-05afd67c4a44cc983"
   instance_type   = "t2.micro"
   key_name        = "terraf1"
@@ -38,7 +38,7 @@ chkconfig httpd on
 echo "hai all this is my website created by terraform infrastructurte by raham sir server-2" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "server-2"
+    Name = "server2"
   }
 }
 
